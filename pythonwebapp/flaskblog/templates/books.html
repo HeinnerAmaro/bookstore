@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #5f788a;
+  color: white;
+}
+</style>
+    {% if posts %}
+
+    	<table id="customers">
+    		<thead>
+    			<tr>
+    				<th>ID</th>
+    				<th>User</th>
+    				<th>Book Title</th>
+    				<th>Rating</th>
+    			
+    				
+    			</tr>
+    		</thead>
+
+    		<tbody>
+    			{% for post in posts %}
+
+</div>
+    			<tr>
+    				<td>{{ post.id }}</td>
+    				<td>{{ post.author.username }}</td>
+    				<td>{{ post.book.title}}</td>
+    				<td>{{ post.rating}}</td>
+    				<td>
+    				
+        
+    				</td>
+    			</tr>
+      
+    			{% endfor %}
+          
+    		</tbody>
+    	</table>
+    	{% endif %}
+{% endblock content %}
